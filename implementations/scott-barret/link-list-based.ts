@@ -63,4 +63,16 @@ export default class Queue<T> {
     isEmpty(): boolean {
         return this._length === 0;
     }
+
+    /**
+     * Returns the item at the front of the queue without removing it from the queue.
+     * @return {T | undefined} The item at the front of the queue if it is not empty, `undefined` otherwise.
+     */
+    front(): T | undefined {
+        if (!this.first) {
+            return undefined;
+        } else {
+            return this.first.value;
+        }
+    }
 }
