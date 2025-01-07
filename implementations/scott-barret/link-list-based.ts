@@ -75,4 +75,16 @@ export default class Queue<T> {
             return this.first.value;
         }
     }
+
+    /**
+     * Returns the item at the back of the queue without removing it from the queue.
+     * @return {T | undefined} The item at the back of the queue if it is not empty, `undefined` otherwise.
+     */
+    back(): T | undefined {
+        if (!this.last) {
+            return undefined;
+        } else {
+            return this.last.value;
+        }
+    }
 }
