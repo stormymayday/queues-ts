@@ -21,7 +21,7 @@ export default class Queue<T> {
     /**
      * Adds an item to the back of the queue.
      * @param {T} item The item to be pushed onto the queue.
-     * @return {number} The new length of the queue.
+     * @return {Queue<T>} This queue.
      */
     enqueue(item: T): Queue<T> {
         const newNode = new Node(item);
@@ -40,9 +40,9 @@ export default class Queue<T> {
      * Removes an item from the front of the queue.
      * @return {Node<T> | undefined} The node at the front of the queue if it is not empty, `undefined` otherwise.
      */
-    dequeue(): Node<T> | null {
+    dequeue(): Node<T> | undefined {
         if (!this.first) {
-            return null;
+            return undefined;
         }
         const temp = this.first;
         if (this._length === 1) {
