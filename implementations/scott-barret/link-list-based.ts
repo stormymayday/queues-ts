@@ -87,4 +87,12 @@ export default class Queue<T> {
             return this.last.value;
         }
     }
+
+    /**
+     * Returns the number of items in the queue.
+     * @return {number} The number of items in the queue.
+     */
+    length(): number {
+        return this._length;
+    }
 }
